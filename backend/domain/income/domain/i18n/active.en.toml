@@ -1,0 +1,9 @@
+# active.en.toml
+[error_unauthorized]
+description = "error unauthorized"
+other = "{{.Domain}}: unauthorized"
+
+[error_permission_denied]
+description = "permission denied"
+other = "{{.Domain}}: cannot access permission denied"
+

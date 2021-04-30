@@ -1,0 +1,9 @@
+# active.th.toml
+[error_unauthorized]
+description = "error unauthorized"
+other = "ไม่ได้รับอนุญาตใช้งาน : {{.Domain}}"
+
+[error_permission_denied]
+description = "permission denied"
+other = "ไม่สามารถเข้าถึง คุณไม่มีสิทธิ์ใช้งาน"
+
