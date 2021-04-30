@@ -1,5 +1,12 @@
-.vscode/
+# == For Add Emply Folder
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
 
+# ==========
+
+.vscode/
 
 # Binaries for programs and plugins
 *.exe
@@ -24,3 +31,4 @@ node_modules
 
 .secret/
 dbconfig.yml
+
