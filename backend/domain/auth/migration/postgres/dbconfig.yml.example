@@ -1,0 +1,5 @@
+localhost:
+  dialect: postgres
+  datasource: host=localhost port=5432 user=postgres password=root dbname=onehour sslmode=disable
+  dir: postgres
+  table: migrations
