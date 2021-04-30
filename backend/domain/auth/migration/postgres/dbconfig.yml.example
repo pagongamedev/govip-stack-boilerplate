@@ -3,3 +3,22 @@ localhost:
   datasource: host=localhost port=5432 user=postgres password=root dbname=onehour sslmode=disable
   dir: postgres
   table: migrations
+
+development:
+  dialect: postgres
+  datasource: host=3- port=5432 user=- password=- dbname=- sslmode=- sslcert=../../../.secret/client.cert sslkey=../../../.secret/client.key
+  dir: migration
+  table: migration
+
+
+seed:
+  dialect: postgres
+  datasource: host=localhost port=5432 user=postgres password=root dbname=pay9 sslmode=disable
+  dir: seed
+  table: seed
+
+seed-integration:
+  dialect: postgres
+  datasource: host=localhost port=5432 user=postgres password=root dbname=pay9 sslmode=disable
+  dir: seed-integration
+  table: seed-integration
