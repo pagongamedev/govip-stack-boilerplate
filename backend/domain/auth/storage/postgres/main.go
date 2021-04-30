@@ -9,10 +9,10 @@ import (
 )
 
 // NewRepository func
-func NewRepository(database interface{}) (auth.Repository, error) {
+func NewRepository(database interface{}) auth.Repository {
 	sqlxDB := sqlx.NewDb(database.(*sql.DB), "postgres")
 	r := repo{db: sqlxDB}
-	return &r, nil
+	return &r
 }
 
 type repo struct {

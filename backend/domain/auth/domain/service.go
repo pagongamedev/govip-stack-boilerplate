@@ -5,9 +5,9 @@ package auth
 //========================================================================
 
 // NewService New Service
-func NewService(repo Repository) (Service, error) {
+func NewService(repo Repository) Service {
 	svc := service{repo}
-	return &svc, nil
+	return &svc
 }
 
 type service struct {

@@ -32,7 +32,7 @@ func appMain(stateStorage godd.Map) godd.InterfaceApp {
 	app.Use(cors.New())
 	// app.Use(logger.New())
 
-	authDomain.Dock(goddApp, "/income/v1", authRepo.NewRepository, stateStorage["database"])
+	authDomain.Dock(goddApp, "/income/v1", authRepo.NewRepository(stateStorage["database"]))
 
 	return goddApp
 }
