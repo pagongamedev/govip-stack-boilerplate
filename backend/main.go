@@ -11,10 +11,8 @@ import (
 	goddPortal "github.com/pagongamedev/go-dd/portal"
 	goddGofiberV2 "github.com/pagongamedev/go-dd/support/gofiber/v2"
 
-	auth "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/auth/domain"
-	authRepo "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/auth/storage/postgres"
-	income "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/income/domain"
-	incomeRepo "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/income/storage/postgres"
+	auth "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/auth"
+	income "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/income"
 )
 
 func main() {
@@ -34,8 +32,8 @@ func appMain(stateStorage godd.Map) godd.InterfaceApp {
 	app.Use(cors.New())
 	// app.Use(logger.New())
 
-	auth.Dock(goddApp, "/auth/v1", authRepo.NewRepository(stateStorage["database"]))
-	income.Dock(goddApp, "/income/v1", incomeRepo.NewRepository(stateStorage["database"]))
+	auth.Dock(goddApp, "/auth/v1", stateStorage["database"])
+	income.Dock(goddApp, "/income/v1", stateStorage["database"])
 
 	return goddApp
 }
