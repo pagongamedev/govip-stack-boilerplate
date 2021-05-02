@@ -359,6 +359,8 @@ github.com/pagongamedev/go-dd v0.0.10-0.20210502142050-4903186fa1d0 h1:2UikOnP0A
 github.com/pagongamedev/go-dd v0.0.10-0.20210502142050-4903186fa1d0/go.mod h1:4PzBQll35xM0AjFFi+DELB+3LtRvSRYo+YZUJMQ8hZU=
 github.com/pagongamedev/go-dd v0.0.10-0.20210502151025-871ab47f765d h1:+PiDRcwTfVZfGvn4pqqkJyPcoYTE4fVP7Ob6a09Jojo=
 github.com/pagongamedev/go-dd v0.0.10-0.20210502151025-871ab47f765d/go.mod h1:IBr3D/N4r6PbOdXiqQBZjHDjrfantQedC4/wQ1GuD74=
+github.com/pagongamedev/go-dd v0.0.35 h1:suPpQE5WbJdSmCfQz7SltUgNVgyv57fZhtHDpDpqqHA=
+github.com/pagongamedev/go-dd v0.0.35/go.mod h1:IBr3D/N4r6PbOdXiqQBZjHDjrfantQedC4/wQ1GuD74=
 github.com/pagongamedev/temp-go-defaults v0.0.0-20210219102045-1d79e41898d7 h1:Wg0Wi7I+/5sEL05WvKjsHP0V/imzsEHYI9SqshtPK3s=
 github.com/pagongamedev/temp-go-defaults v0.0.0-20210219102045-1d79e41898d7/go.mod h1:ASIyoXs3F4RRkQYm224llNvU+A/iN/cu7/QCi/ViPhQ=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=

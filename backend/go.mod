@@ -9,7 +9,7 @@ require (
 	github.com/jmoiron/sqlx v1.3.3
 	github.com/joho/godotenv v1.3.0
 	github.com/lib/pq v1.10.1
-	github.com/pagongamedev/go-dd v0.0.10-0.20210502151025-871ab47f765d
+	github.com/pagongamedev/go-dd v0.0.35
 	golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b // indirect
 	golang.org/x/text v0.3.6
 )
