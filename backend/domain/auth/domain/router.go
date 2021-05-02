@@ -20,7 +20,7 @@ func Router(goddApp godd.InterfaceApp, path string, service interface{}) *goddMi
 
 	ms = goddMicroservice.New(goddApp, path, service, nil, i18n)
 
-	// ms.Post("transaction/list", handlerIncomeListRead())
+	ms.Post("register", handlerRegisterCreate())
 	// ms.Post("transaction/create", handlerIncomeCreate())
 
 	return ms

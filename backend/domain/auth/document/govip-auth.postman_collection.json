@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "57762d76-0127-49da-8a30-206b7b2ebd14",
+		"name": "govip/auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{url}}/auth/v1/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/v1/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

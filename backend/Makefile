@@ -14,6 +14,9 @@ compile:
 run:
 	$$env:GO111MODULE="on"; $$env:API_ENV="localhost";
 	go run .\main.go
+
+dir_migration_pre = .\domain\
+dir_migration_post = "\migration\postgres"
 else
 
 build:
@@ -26,4 +29,20 @@ compile:
 run:
 	env GO111MODULE=on API_ENV=localhost go run main.go
 
+dir_migration_pre = ./domain/
+dir_migration_post = /migration/postgres
 endif
+
+migration-re:
+	(cd ${dir_migration_pre}auth${dir_migration_post} && sql-migrate down -limit=0 -env=localhost && sql-migrate down -limit=0 -env=seed);
+	(cd ${dir_migration_pre}auth${dir_migration_post} && sql-migrate up -env=localhost && sql-migrate up -env=seed)
+
+migration-down:
+	(cd ${dir_migration_pre}auth${dir_migration_post}  && sql-migrate down -limit=0 -env=localhost && sql-migrate down -limit=0 -env=seed);
+
+migration-up:
+	(cd ${dir_migration_pre}auth${dir_migration_post}  && sql-migrate up -env=localhost && sql-migrate up -env=seed)
+
+migration-re-integration:
+	(cd ${dir_migration_pre}auth${dir_migration_post}  && sql-migrate down -limit=0 -env=localhost && sql-migrate down -limit=0 -env=seed-integration);
+	(cd ${dir_migration_pre}auth${dir_migration_post}  && sql-migrate up -env=localhost && sql-migrate up -env=seed-integration)
