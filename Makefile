@@ -16,3 +16,6 @@ backend-migration-re:
 
 backend-run:
 	(cd ${dir_backend} && make run)
+
+backend-update-go-dd:
+	(cd ${dir_backend} && make update-go-dd tag=${tag})

@@ -5,11 +5,11 @@ go 1.16
 require (
 	github.com/BurntSushi/toml v0.3.1
 	github.com/getsentry/sentry-go v0.10.0
-	github.com/gofiber/fiber/v2 v2.5.0
-	github.com/jmoiron/sqlx v1.3.1
+	github.com/gofiber/fiber/v2 v2.8.0
+	github.com/jmoiron/sqlx v1.3.3
 	github.com/joho/godotenv v1.3.0
-	github.com/lib/pq v1.2.0
-	github.com/pagongamedev/go-dd v0.0.10-0.20210502142050-4903186fa1d0
-	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9 // indirect
-	golang.org/x/text v0.3.4
+	github.com/lib/pq v1.10.1
+	github.com/pagongamedev/go-dd v0.0.10-0.20210502151025-871ab47f765d
+	golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b // indirect
+	golang.org/x/text v0.3.6
 )
