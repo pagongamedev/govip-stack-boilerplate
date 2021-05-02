@@ -8,7 +8,7 @@ create table auth.password (
     hashsalt varchar,
     -- normal
     -- fk
-    user_id int,
+    user_uuid uuid,
     -- ------------------------------------------------
     -- time
     created_at timestamp not null default now(),
@@ -16,10 +16,11 @@ create table auth.password (
     deleted_at timestamp null,
     -- ------------------------------------------------
     -- foreign
-    foreign key (user_id) references auth.user (id),
+    foreign key (user_uuid) references auth.user (uuid),
     -- constraint
     constraint password_id_pk primary key (id),
-    constraint password_uuid_uk unique (uuid)
+    constraint password_uuid_uk unique (uuid),
+    constraint password_hashsalt_uk unique (user_uuid, hashsalt)
 );
 
 -- +migrate Down

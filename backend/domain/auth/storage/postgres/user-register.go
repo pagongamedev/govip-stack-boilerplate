@@ -4,21 +4,22 @@ import (
 	"net/http"
 
 	godd "github.com/pagongamedev/go-dd"
+	internal "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/auth/storage/postgres/internal"
 )
 
 func (r *repo) UserRegister(username string, hashsalt string, phone string) (interface{}, *godd.Error) {
 	tx := r.db.MustBegin()
-	response := godd.Map{"User": username, "Password": hashsalt, "Phone": phone}
-	// bookType := "USER"
+	// response := godd.Map{"User": username, "Password": hashsalt, "Phone": phone}
 
-	// if isExchange {
-	// 	bookType = "EXCH"
-	// }
+	userUUID, goddErr := internal.UserCreate(tx, username, phone)
+	if goddErr != nil {
+		return nil, goddErr
+	}
 
-	// accBalance, goddErr := r.InternalCreate(tx, exchangeID, currencyCode, bookType, address, name)
-	// if goddErr != nil {
-	// 	return nil, goddErr
-	// }
+	_, goddErr = internal.PasswordCreate(tx, userUUID, hashsalt)
+	if goddErr != nil {
+		return nil, goddErr
+	}
 
 	err := tx.Commit()
 	if err != nil {
@@ -26,20 +27,5 @@ func (r *repo) UserRegister(username string, hashsalt string, phone string) (int
 
 	}
 
-	// if accBalance == nil {
-	// 	return nil, godd.ErrorNew(http.StatusNotFound, errors.New("address not exist"))
-	// }
-
-	// response := &wallet.MappingBookBalance{
-	// 	IsLock:       accBalance.IsLock,
-	// 	BookType:     accBalance.BookType,
-	// 	ExchangeName: accBalance.ExchangeName,
-	// 	AddressName:  accBalance.AddressName,
-	// 	CurrencyCode: accBalance.CurrencyCode,
-	// 	Address:      accBalance.Address,
-	// 	Balance:      r.HelperIntToFloat(accBalance.Balance),
-	// 	CreatedAt:    accBalance.CreatedAt,
-	// }
-
-	return response, nil
+	return userUUID, nil
 }

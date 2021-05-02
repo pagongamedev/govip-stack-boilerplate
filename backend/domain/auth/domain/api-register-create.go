@@ -12,7 +12,7 @@ type requestRegisterCreate struct {
 	Username   string `json:"username"     swaggertype:"string"     validate:"required,email"`
 	Password   string `json:"password"     swaggertype:"string"     validate:"required,min=8"`
 	RePassword string `json:"re_password"  swaggertype:"string"     validate:"required,eqfield=Password"`
-	Phone      string `json:"phone"        swaggertype:"string"     validate:"required"`
+	Phone      string `json:"phone"        swaggertype:"string"     validate:"required,e164"`
 }
 
 func handlerRegisterCreate() *goddAPI.HTTP {

@@ -46,3 +46,6 @@ migration-up:
 migration-re-integration:
 	(cd ${dir_migration_pre}auth${dir_migration_post}  && sql-migrate down -limit=0 -env=localhost && sql-migrate down -limit=0 -env=seed-integration);
 	(cd ${dir_migration_pre}auth${dir_migration_post}  && sql-migrate up -env=localhost && sql-migrate up -env=seed-integration)
+
+update-go-dd:
+	go get github.com/pagongamedev/go-dd@${tag}

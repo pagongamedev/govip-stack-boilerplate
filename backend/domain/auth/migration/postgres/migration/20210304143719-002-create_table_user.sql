@@ -19,7 +19,8 @@ create table auth.user (
     -- constraint
     constraint user_id_pk primary key (id),
     constraint user_uuid_uk unique (uuid),
-    constraint user_email_uk unique (email)
+    constraint user_email_uk unique (email),
+    constraint user_phone_uk unique (phone)
 );
 
 -- +migrate Down
