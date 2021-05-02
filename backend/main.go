@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/logger"
 
 	"github.com/pagongamedev/govip-stack-boilerplate/backend/main/middleware"
 	"github.com/pagongamedev/govip-stack-boilerplate/backend/main/secret"
@@ -30,7 +31,7 @@ func main() {
 func appMain(stateStorage godd.Map) godd.InterfaceApp {
 	goddApp, app := goddGofiberV2.NewApp()
 	app.Use(cors.New())
-	// app.Use(logger.New())
+	app.Use(logger.New())
 
 	auth.Dock(goddApp, "/auth/v1", stateStorage["database"])
 	income.Dock(goddApp, "/income/v1", stateStorage["database"])
