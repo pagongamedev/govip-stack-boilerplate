@@ -18,10 +18,11 @@ func Get() *godd.MapString {
 	// ======= Load Dot ENV =======
 	log.Println("App Mode : " + env)
 
-	if env == "localhost" {
-		err := godotenv.Load()
-		godd.MustError(err)
+	err := godotenv.Load()
+	if err == nil {
 		log.Printf("Load .ENV\n")
+	} else {
+		log.Printf("Not Load .ENV\n")
 	}
 
 	// ============================
