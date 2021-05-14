@@ -10,7 +10,7 @@ import (
 
 	godd "github.com/pagongamedev/go-dd"
 	goddPortal "github.com/pagongamedev/go-dd/portal"
-	goddGofiberV2 "github.com/pagongamedev/go-dd/support/gofiber/v2"
+	goddGofiberV2 "github.com/pagongamedev/go-dd/support/framework/gofiber/v2"
 
 	auth "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/auth"
 	income "github.com/pagongamedev/govip-stack-boilerplate/backend/domain/income"

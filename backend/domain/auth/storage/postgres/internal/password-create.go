@@ -6,7 +6,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 	godd "github.com/pagongamedev/go-dd"
-	goddSqlx "github.com/pagongamedev/go-dd/helper/sqlx"
+	goddSqlx "github.com/pagongamedev/go-dd/support/database/sqlx"
 )
 
 func PasswordCreate(tx *sqlx.Tx, userUUID string, hashsalt string) (string, *godd.Error) {

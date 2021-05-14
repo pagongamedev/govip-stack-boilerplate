@@ -15,22 +15,22 @@ type requestRegisterCreate struct {
 	Phone      string `json:"phone"        swaggertype:"string"     validate:"required,e164"`
 }
 
-func handlerRegisterCreate() *goddAPI.HTTP {
-	api := goddAPI.NewAPIHTTP()
+func handlerRegisterCreate() *goddAPI.API {
+	api := goddAPI.New()
 
 	// api.LifeCycle.ValidateAuth
 	// api.LifeCycle.ValidateRole
 
-	api.LifeCycle.ParseRequest(func(context godd.InterfaceContext) (requestMapping interface{}, goddgoddErr *godd.Error) {
+	api.LifeCycle.ParseRequest(func(context *godd.Context) (requestMapping interface{}, goddgoddErr *godd.Error) {
 		requestMapping = new(requestRegisterCreate)
 
-		if err := context.BodyParser(requestMapping); err != nil {
+		if err := context.App().BodyParser(requestMapping); err != nil {
 			return nil, godd.ErrorNew(http.StatusBadRequest, err)
 		}
 		return requestMapping, nil
 	})
 
-	api.LifeCycle.ValidateRequest(func(context godd.InterfaceContext, requestMappingBody interface{}) (requestValidatedBody interface{}, goddErr *godd.Error) {
+	api.LifeCycle.ValidateRequest(func(context *godd.Context, requestMappingBody interface{}) (requestValidatedBody interface{}, goddErr *godd.Error) {
 		request := requestMappingBody.(*requestRegisterCreate)
 
 		// Validate Request
@@ -41,7 +41,7 @@ func handlerRegisterCreate() *goddAPI.HTTP {
 		return request, nil
 	})
 
-	api.LifeCycle.HandlerLogic(func(context godd.InterfaceContext, requestValidatedBody, requestValidatedParam, requestValidatedQuery interface{}) (code int, responseRaw interface{}, responsePagination *godd.ResponsePagination, goddErr *godd.Error) {
+	api.LifeCycle.HandlerLogic(func(context *godd.Context, requestValidatedBody, requestValidatedParam, requestValidatedQuery interface{}) (code int, responseRaw interface{}, responsePagination *godd.ResponsePagination, goddErr *godd.Error) {
 		request := requestValidatedBody.(*requestRegisterCreate)
 
 		svc := context.GetService().(*service)
@@ -55,7 +55,7 @@ func handlerRegisterCreate() *goddAPI.HTTP {
 		return http.StatusOK, response, responsePagination, nil
 	})
 
-	// api.LifeCycle.MappingResponse(func(context godd.InterfaceContext, code int, responseRaw interface{}, responsePagination *godd.ResponsePagination) (codeOut int, responseMapping interface{}, responsePaginationOut *godd.ResponsePagination, goddErr *godd.Error) {
+	// api.LifeCycle.MappingResponse(func(context *godd.Context, code int, responseRaw interface{}, responsePagination *godd.ResponsePagination) (codeOut int, responseMapping interface{}, responsePaginationOut *godd.ResponsePagination, goddErr *godd.Error) {
 	// 	return code, []MappingBookBalance{*responseRaw.(*MappingBookBalance)}, responsePagination, nil
 	// })
 
