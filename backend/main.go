@@ -46,11 +46,11 @@ func appAPIDocument(secret map[string]string) godd.InterfaceApp {
 	// docs.SwaggerInfo.Description = secret["doc_description"]
 
 	// if secret["doc_api_host"]  != ""{
-	// 	docs.SwaggerInfo.host = secret["doc_api_host"]
+	// 	docs.SwaggerInfo.Host = secret["doc_api_host"]
 	// }
 
 	// if secret["doc_basepath"]  != ""{
-	// 	docs.SwaggerInfo.basePath = secret["doc_basepath"]
+	// 	docs.SwaggerInfo.BasePath = secret["doc_basepath"]
 	// }
 
 	// log.Println(secret["doc_service_title"] + " Docs started on :8082")
